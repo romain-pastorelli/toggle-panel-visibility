@@ -4,6 +4,7 @@ Sometimes, I want to make the KDE panel to auto hide (for example during a video
 ## Requirements
 - using KDE Plasma (I have v.6.7.1, portability of this project is not guaranteed)
 - `busctl` command (normally already installed)
+- `jq` command
 
 ## Solution
 You can clone this repository and make the [toggle-panel-visibility.sh](./toggle-panel-visibility.sh) script executable with `chmod u+x toggle-panel-visibility.sh`.
