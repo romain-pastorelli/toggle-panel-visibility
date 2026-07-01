@@ -13,7 +13,7 @@ You can try to execute the script right away. However, it may not wrk as expecte
 ### 1. Find the panel's Containment ID
 The script uses the `busctl` command to interact with the KDE Plasma panel. To do so, it needs to know the panel's Containment ID. You can find it by running the following command:
 ```bash
-$ echo "CID=$(cat ~/.config/plasma-org.kde.plasma.desktop-appletsrc | grep "Applets" |\
+echo "CID=$(cat ~/.config/plasma-org.kde.plasma.desktop-appletsrc | grep "Applets" |\
  head -n 1 | awk -F'[][]' '{print $4}')"  
 # CID=2 for me
 ```
@@ -21,7 +21,7 @@ $ echo "CID=$(cat ~/.config/plasma-org.kde.plasma.desktop-appletsrc | grep "Appl
 ### 2. Find the right attribute's name
 In my case, the visibility of the pannel was named "hiding" but it can differ depending on your configuration or version. To find the right attribute's name, you can run the following command:
 ```bash
-$ busctl --user call org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell evaluateScript 's'\
+busctl --user call org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell evaluateScript 's'\
  "p=panelById(2); print(JSON.stringify(p, null, 2))" | sed -n 's/^s "\(.*\)"$/\1/p' |\
   sed 's/\\n/\n/g' | sed 's/\\"/"/g' | jq
 ```
