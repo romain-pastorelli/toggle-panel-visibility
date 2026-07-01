@@ -1,6 +1,3 @@
-# toggle-panel-visibility
-A small tutorial to toggle KDE Plasma panel visibility from autohide to always visible.
-
 ## Problem
 Sometimes, I want to make the KDE panel to auto hide (for example during a video call, and/or when I am using a full screen application). But most of the time, I want to make it always visible. Going into the panel's settings each time to change the visibility mode manually is long and boring. So here is a script you can adapt and use to help you do that automatically.
 
